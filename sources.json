@@ -1,17 +1,55 @@
 {
-  "schemaVersion": 1,
-  "catalogName": "CineNest Sources",
+  "schemaVersion": 2,
+  "catalogName": "CineNest Anime Extensions",
   "catalogVersion": 1,
   "updatedAt": "2026-10-24",
   "sources": [
     {
-      "id": "example-public-domain",
-      "name": "Public Domain Movies",
-      "description": "A collection of copyright-free classic films.",
+      "id": "ext-crunchyroll",
+      "name": "Crunchyroll",
+      "description": "Official premium anime streaming and simulcasts.",
       "type": "website",
-      "baseUrl": "https://example.com/api",
-      "websiteUrl": "https://example.com",
-      "integrationType": "external",
+      "baseUrl": "https://www.crunchyroll.com",
+      "websiteUrl": "https://www.crunchyroll.com",
+      "integrationType": "internal_extension",
+      "capabilities": {
+        "search": true,
+        "catalog": true,
+        "playback": true
+      },
+      "authorization": {
+        "verified": true,
+        "notes": "Official source."
+      },
+      "enabled": true
+    },
+    {
+      "id": "ext-hianime",
+      "name": "HiAnime",
+      "description": "Comprehensive anime catalog and streaming links.",
+      "type": "website",
+      "baseUrl": "https://hianime.to",
+      "websiteUrl": "https://hianime.to",
+      "integrationType": "internal_extension",
+      "capabilities": {
+        "search": true,
+        "catalog": true,
+        "playback": true
+      },
+      "authorization": {
+        "verified": false,
+        "notes": "Community sourced via EverythingMoe."
+      },
+      "enabled": true
+    },
+    {
+      "id": "ext-anilist",
+      "name": "AniList API",
+      "description": "Anime tracking, discovery, and metadata.",
+      "type": "catalog_api",
+      "baseUrl": "https://graphql.anilist.co",
+      "websiteUrl": "https://anilist.co",
+      "integrationType": "internal_extension",
       "capabilities": {
         "search": true,
         "catalog": true,
@@ -19,7 +57,7 @@
       },
       "authorization": {
         "verified": true,
-        "notes": "Public domain content only."
+        "notes": "Public GraphQL API."
       },
       "enabled": true
     }
