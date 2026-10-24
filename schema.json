@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/OWNER/CineNest-Sources/main/schema.json",
+  "title": "CineNest Source Catalog",
+  "description": "Validation schema for CineNest media sources.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "catalogName": {
+      "type": "string"
+    },
+    "catalogVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          You are completely right—my apologies for the formatting glitch in the previous response where the markdown got tangled and generated a broken, duplicate version of `schema.json` at the top of the output. 
+
+Here is the single, corrected, and valid `schema.json` file without any duplicates or formatting errors:
+
+### `schema.json`
+```json
+{
+  "$schema": "[https://json-schema.org/draft/2020-12/schema](https://json-schema.org/draft/2020-12/schema)",
+  "$id": "[https://raw.githubusercontent.com/OWNER/CineNest-Sources/main/schema.json](https://raw.githubusercontent.com/OWNER/CineNest-Sources/main/schema.json)",
+  "title": "CineNest Source Catalog",
+  "description": "Validation schema for CineNest media sources.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "catalogName": {
+      "type": "string"
+    },
+    "catalogVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["website", "catalog_api", "direct_stream", "media_server"]
+          },
+          "baseUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "websiteUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "integrationType": {
+            "type": "string",
+            "enum": ["external", "documented_api", "direct_stream", "server_api"]
+          },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "search": { "type": "boolean" },
+              "catalog": { "type": "boolean" },
+              "playback": { "type": "boolean" }
+            },
+            "required": ["search", "catalog", "playback"],
+            "additionalProperties": false
+          },
+          "authorization": {
+            "type": "object",
+            "properties": {
+              "verified": { "type": "boolean" },
+              "notes": { "type": "string" }
+            },
+            "required": ["verified"],
+            "additionalProperties": false
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "baseUrl",
+          "integrationType",
+          "capabilities",
+          "authorization",
+          "enabled"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "catalogName",
+    "catalogVersion",
+    "updatedAt",
+    "sources"
+  ],
+  "additionalProperties": false
+}
