@@ -3,5 +3,25 @@
   "catalogName": "CineNest Sources",
   "catalogVersion": 1,
   "updatedAt": "2026-10-24",
-  "sources": []
+  "sources": [
+    {
+      "id": "example-public-domain",
+      "name": "Public Domain Movies",
+      "description": "A collection of copyright-free classic films.",
+      "type": "website",
+      "baseUrl": "https://example.com/api",
+      "websiteUrl": "https://example.com",
+      "integrationType": "external",
+      "capabilities": {
+        "search": true,
+        "catalog": true,
+        "playback": false
+      },
+      "authorization": {
+        "verified": true,
+        "notes": "Public domain content only."
+      },
+      "enabled": true
+    }
+  ]
 }
